@@ -56,5 +56,51 @@ Topics include:
 - Lateral movement
 - Post-compromise enumeration
 
-Example lab:
+---
+
+## Tools Used
+
+Throughout these labs, I use a variety of industry-standard offensive security tools, including:
+
+- Nmap
+- Responder
+- Impacket
+- BloodHound
+- CrackMapExec
+- Nessus
+- Burp Suite
+- Metasploit
+- Netcat
+
+---
+
+## Lab Documentation Format
+
+Each lab includes:
+
+- Objective
+- Lab environment
+- Tools used
+- Commands executed
+- Attack methodology
+- Screenshots
+- Troubleshooting notes
+- Key takeaways
+
+This structure helps reinforce repeatable penetration testing methodology.
+
+---
+
+## Current Progress
+
+PNPT training progress: **56% complete**
+
+The remaining sections include advanced Active Directory attacks, post-exploitation techniques, and capstone lab exercises.
+
+---
+
+## Disclaimer
+
+All labs and demonstrations in this repository are conducted in **controlled lab environments for educational purposes only**.
+
 
