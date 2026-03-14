@@ -39,9 +39,8 @@ The workflow followed a standard progression of enumeration, service analysis, e
 
 Document discovery and enumeration steps here.
 
-### Commands
+## Commands
 
-```bash
 # Add commands here
 
 Findings
@@ -52,17 +51,19 @@ Finding 2
 
 Finding 3
 
-Exploitation
+## Exploitation
 
 Document the steps used to gain access or validate the attack.
 
-Commands
+## Commands
+
 # Add commands here
+
 Result
 
 Describe the outcome of the exploitation attempt.
 
-Post-Exploitation
+## Post-Exploitation
 
 Document actions taken after access was obtained.
 
@@ -77,12 +78,14 @@ lateral movement opportunities
 proof of access
 
 Commands
+
 # Add commands here
+
 Result
 
 Describe what was confirmed after compromise.
 
-Troubleshooting
+## Troubleshooting
 
 Document problems encountered and how they were resolved.
 
@@ -90,11 +93,11 @@ Issue	Troubleshooting Steps	Resolution
 Example issue	Checked service status, validated connectivity, reviewed syntax	Corrected configuration / command
 Screenshots
 
-Add screenshot references here.
+## Add screenshot references here.
 
 Example:
 
-Key Takeaways
+## Key Takeaways
 
 Key lesson 1
 
@@ -102,16 +105,16 @@ Key lesson 2
 
 Key lesson 3
 
-Notes
+## Notes
 
 Add any additional observations, lessons learned, or follow-up actions here.
 
-Disclaimer
+## Disclaimer
 
 This lab was conducted in a controlled environment for educational purposes only.
 
 
-A couple of quick notes:
+## A couple of quick notes:
 
 - Save it as **Markdown**, not `.txt`
 - If Windows created it as `lab-template.md.txt`, rename it to exactly:
