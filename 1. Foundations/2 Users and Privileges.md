@@ -1,0 +1,252 @@
+==================================================
+👤 USERS AND PRIVILEGES
+==================================================
+
+📌 Overview
+--------------------------------------------------
+
+Linux uses a permission model to control which users can read, write, or execute files.
+
+Understanding how users, groups, and privileges work is extremely important in both system administration and penetration testing.
+
+Attackers frequently look for privilege misconfigurations to escalate access on a compromised machine.
+
+This section explores:
+
+• Linux file permissions
+• User enumeration
+• Password storage
+• Privilege inspection
+• Sudo permissions
+
+--------------------------------------------------
+📂 Viewing File Permissions
+--------------------------------------------------
+
+Command used:
+
+ls -la
+
+This command lists all files in a directory and shows detailed information about each file including permissions, ownership, and size.
+
+Example output:
+
+drwxr-xr-x 21 kali kali 4096 Sep 5 15:32 .
+
+Permission breakdown:
+
+drwxr-xr-x
+
+The permissions are divided into three groups:
+
+Owner permissions
+Group permissions
+Other (everyone else)
+
+Each section contains:
+
+r = read  
+w = write  
+x = execute
+
+Example breakdown:
+
+rwx = read, write, execute  
+r-x = read and execute  
+r-- = read only
+
+Example interpretation:
+
+drwxr-xr-x
+
+d = directory
+
+Owner: read, write, execute  
+Group: read and execute  
+Others: read and execute
+
+--------------------------------------------------
+🔧 Changing File Permissions
+--------------------------------------------------
+
+Permissions can be modified using the chmod command.
+
+Example:
+
+chmod +rwx filename
+
+This grants read, write, and execute permissions.
+
+Another common example:
+
+chmod 777 filename
+
+777 is considered full access for all users.
+
+Owner = rwx  
+Group = rwx  
+Others = rwx
+
+⚠️ Security Note
+
+chmod 777 is often referred to as "God mode" because it grants full access to everyone. In real environments this is usually discouraged because it creates security risks.
+
+--------------------------------------------------
+👥 Enumerating System Users
+--------------------------------------------------
+
+A common enumeration command used during penetration testing is:
+
+cat /etc/passwd
+
+Example command:
+
+┌──(jan㉿kali)-[/home/kali]
+└─$ cat /etc/passwd
+
+Example output:
+
+root:x:0:0:root:/root:/usr/bin/zsh
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+...
+kali:x:1000:1000:,,,:/home/kali:/usr/bin/zsh
+jc:x:1001:1001:,,,:/home/jc:/bin/bash
+jan:x:1002:1002:,,,:/home/jan:/bin/bash
+
+--------------------------------------------------
+
+📌 Information gathered from /etc/passwd:
+
+• List of system users
+• User IDs
+• Default shells
+• Home directories
+• Service accounts
+
+This file does NOT contain password hashes.
+
+--------------------------------------------------
+🔐 Password Hash Storage
+--------------------------------------------------
+
+Password hashes are stored in a separate protected file:
+
+/etc/shadow
+
+Attempting to read this file without privileges results in an error.
+
+Example:
+
+┌──(kali㉿kali)-[~]
+└─$ cat /etc/shadow
+
+Output:
+
+cat: /etc/shadow: Permission denied
+
+--------------------------------------------------
+
+Access requires elevated privileges.
+
+Example:
+
+┌──(kali㉿kali)-[~]
+└─$ sudo cat /etc/shadow
+
+Example output:
+
+root:*:19212:0:99999:7:::
+daemon:*:19212:0:99999:7:::
+...
+kali:$y$j9T$vaVrEQti2wJvk/V3EI/pQ1$l/FIZIUYZHkiIbGWIqSMN6KgElXdvs3DiGvQrp67XU.
+jc:$y$j9T$3lp2d4mWZiIvTIy6eCEEV1$dyqQtFKc2r.0jm2W2CONdWQscmofWeLLng167S2/XID
+jan:$y$j9T$slqPFc/KxyYEBaTM1ckge/$Yfoqk.JXvAhGuaKJuwzBAe6Wd7iJNPZVysVtliuPWwC
+
+These entries represent encrypted password hashes for each user.
+
+--------------------------------------------------
+🛡️ Checking Sudo Privileges
+--------------------------------------------------
+
+To inspect privilege configurations, administrators can view the sudo configuration file.
+
+Command:
+
+sudo cat /etc/sudoers
+
+Example section of the configuration:
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+This indicates that users belonging to the sudo group can run administrative commands.
+
+--------------------------------------------------
+🔎 Identifying Sudo Group Members
+--------------------------------------------------
+
+To see which users belong to the sudo group:
+
+Command:
+
+grep 'sudo' /etc/group
+
+Example output:
+
+sudo:x:27:kali
+
+This indicates that the user "kali" belongs to the sudo group.
+
+--------------------------------------------------
+⚙️ Checking Allowed Sudo Commands
+--------------------------------------------------
+
+To determine what commands a user can execute with sudo:
+
+Command:
+
+sudo -l
+
+Example output:
+
+Matching Defaults entries for kali on kali:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+User kali may run the following commands on kali:
+    (ALL : ALL) ALL
+
+This means the user has full administrative privileges.
+
+--------------------------------------------------
+📚 Key Takeaways
+--------------------------------------------------
+
+✔ Linux permissions determine who can access or modify files.
+
+✔ The /etc/passwd file is used to enumerate system users.
+
+✔ Password hashes are stored in the protected /etc/shadow file.
+
+✔ Administrative privileges are managed through sudo.
+
+✔ Commands like sudo -l and /etc/sudoers are extremely useful during privilege enumeration.
+
+--------------------------------------------------
+⚠️ Security Note
+--------------------------------------------------
+
+Many privilege escalation techniques begin by analyzing:
+
+• user accounts
+• sudo permissions
+• writable files
+• misconfigured permissions
+
+Understanding these mechanisms is critical for both system defenders and penetration testers.
+
+==================================================
