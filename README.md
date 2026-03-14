@@ -1,3 +1,8 @@
+![PNPT](https://img.shields.io/badge/Certification-PNPT-blue)
+![Security](https://img.shields.io/badge/Focus-Offensive%20Security-red)
+![Labs](https://img.shields.io/badge/Type-Hands--On%20Labs-green)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+
 # PNPT Red Team Labs
 
 This repository documents my hands-on training and lab work while progressing through the **Practical Network Penetration Tester (PNPT)** program.
