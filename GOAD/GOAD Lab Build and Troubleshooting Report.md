@@ -191,7 +191,7 @@ Errno::EACCES
 Moved GOAD project to Windows filesystem:
 
 ```text
-C:\Users\mahon\Desktop\GOAD-main
+C:\Users\######\Desktop\GOAD-main
 ```
 
 ---
@@ -252,7 +252,7 @@ vagrant global-status --prune
 Deleted from:
 
 ```text
-C:\Users\mahon\VirtualBox VMs\
+C:\Users\#####\VirtualBox VMs\
 ```
 
 Removed:
