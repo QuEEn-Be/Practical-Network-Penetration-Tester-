@@ -1,8 +1,8 @@
-\# 🧠 GOAD Lab Deployment – Lessons Learned \& Troubleshooting Guide
+\# GOAD Lab Deployment – Lessons Learned \& Troubleshooting Guide
 
 
 
-\## 📌 Overview
+\##  Overview
 
 
 
@@ -18,7 +18,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\## 🏗️ Final Working Architecture
+\## Final Working Architecture
 
 
 
@@ -42,7 +42,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 1. ❌ Native Windows is NOT a Valid Ansible Control Node
+\### 1. Native Windows is NOT a Valid Ansible Control Node
 
 
 
@@ -74,7 +74,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 2. ❌ Python Version Compatibility Issues
+\### 2. Python Version Compatibility Issues
 
 
 
@@ -106,7 +106,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 3. ❌ Installing Dependencies Outside a Virtual Environment
+\### 3. Installing Dependencies Outside a Virtual Environment
 
 
 
@@ -152,7 +152,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 4. ❌ Running from Windows-Mounted Path (`/mnt/c`)
+\### 4. Running from Windows-Mounted Path (`/mnt/c`)
 
 
 
@@ -194,7 +194,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 5. ❌ Vagrant Not Found in WSL
+\### 5. Vagrant Not Found in WSL
 
 
 
@@ -258,7 +258,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 6. ❌ GOAD Installed in OneDrive Path
+\### 6. GOAD Installed in OneDrive Path
 
 
 
@@ -286,7 +286,7 @@ The goal was to build a realistic Active Directory lab environment for penetrati
 
 
 
-\### 7. ❌ Nested Repository Structure
+\### 7. Nested Repository Structure
 
 
 
@@ -310,7 +310,7 @@ rm -rf GOAD-main
 
 
 
-\## ✅ Final Working Commands
+\## Final Working Commands
 
 
 
