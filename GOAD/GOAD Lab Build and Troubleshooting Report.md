@@ -342,6 +342,28 @@ Multiple adapters introduce routing issues. Follow lab-defined configurations.
 
 ---
 
+### Lessons Learned
+
+Throughout the course of this engagement, several key operational and technical insights were identified that improved efficiency and reinforced effective penetration testing methodology:
+
+**1. Importance of Early Environment Validation**
+Validating all systems at the beginning of the engagement proved critical. Ensuring that virtual machines, network configurations, and services were functioning as expected helped prevent misinterpretation of results and reduced time spent troubleshooting avoidable issues later in the process.
+
+**2. Adaptability and Willingness to Pivot**
+During testing, certain approaches and tools did not produce the expected results. Recognizing when to pivot to alternative methods or tools—rather than persisting on a failing path—significantly improved progress and efficiency. This reinforces the importance of flexibility in real-world penetration testing engagements.
+
+**3. Tool Selection Based on Environment Compatibility**
+Initial attempts to use VMware presented challenges within the lab environment. Transitioning to VirtualBox provided greater stability and compatibility for this specific setup. This highlights the importance of selecting tools based on environmental requirements rather than personal preference.
+
+**4. Structured Troubleshooting Methodology**
+Applying a methodical approach to troubleshooting—isolating variables, testing assumptions, and verifying configurations—helped identify root causes more effectively. This approach minimized downtime and ensured more consistent forward progress.
+
+---
+
+These lessons reinforce that successful penetration testing extends beyond technical execution and includes strong operational discipline, adaptability, and strategic decision-making.
+
+---
+
 ## Next Phase
 
 After provisioning completes:
